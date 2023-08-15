@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    overflow-x: hidden;
+}
+
+#wrapper{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+}
+
+#wrapper.wrapperactive::before {
+    content: ""; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+.product-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.product-image-slider img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.product-image-slider img:hover {
+    transform: scale(1.1);
+}
+
+.product-details {
+    flex: 1;
+    padding: 20px;
+}
+
+.product-details h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.product-details p {
+    margin-bottom: 10px;
+}
+
+/* ... (estilos existentes) */
+
+.color-circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.color-circle:hover {
+    border-color: #000;  /* Borde negro al pasar el mouse */
+}
+
+.size-label {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.size-label:hover {
+    background-color: #eee;  /* Fondo gris claro al pasar el mouse */
+}
+
+/*Cart*/
+
+.cart-container {
+    max-width: 500px;
+    bottom: 0;
+    flex-flow: column;
+    height: 100%;
+    position: absolute;
+    right: 0;     
+    top: 0;
+    width: 100%;
+    opacity: 0; /* Inicialmente, el contenedor estará completamente transparente */
+    transform: translateX(100%); /* Inicialmente, el contenedor estará completamente a la derecha, fuera de la vista */
+    transition: opacity 1s, transform 1s; /* Transición suave de 1 segundo para la opacidad y el desplazamiento */
+    background-color: white;
+    display: flex;
+}
+
+
+.cart-container.activecart {
+    opacity: 1; /* El contenedor será completamente visible */
+    transform: translateX(0); /* El contenedor se desplazará hacia su posición original */
+}
+
+.cart-top{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    max-height: 56px;
+    text-align: center;
+    padding: 15px 15px 15px 32px;
+}
+
+.subtitle{
+    line-height: 30px;
+    font-size: 16px;
+}
+.cart-top > span {
+    font-size: 30px;
+}
+
+.cart-bot{
+    border-top: 1px solid #c3c5c7;}
+
+.cart{
+    padding: 30px 30px;
+}
+.cart-item{
+    border-bottom: 1px solid #c3c5c7;
+    display: flex;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    gap: 1em;
+    justify-content: flex-start;
+}
+.cart-image{
+    max-width: 100px;
+}
+.cart-image img{
+    width: 100%;
+}
+
+.flex-end{
+    margin-left:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cart-item-info{
+    display: flex;
+    flex-direction: column;
+}
+.cart-item-amount-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.5em;
+    margin-top: auto;
+}
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    margin-bottom: 10px 0;
+}
+.red-circle{
+    background-color: red;
+    height: 16px;
+    width: 16px;
+
+}
