@@ -7,7 +7,7 @@ fetch('/api/products')
             const img = document.createElement('img');
             img.src = product.imageUrls[0];
             img.addEventListener('click', () => {
-                window.location.href = `/product/${product._id}`;
+                window.location.href = `/product/${product.slug}`;
             });
             productDiv.appendChild(img);
             productsDiv.appendChild(productDiv);

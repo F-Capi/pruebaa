@@ -1,8 +1,7 @@
 // Obtiene el ID del producto de la URL
-const productId = window.location.pathname.split('/').pop();
-
+const productSlug = window.location.pathname.split('/').pop();
 // Carga los detalles del producto
-fetch(`/api/products/${productId}`)
+fetch(`/api/products/slug/${productSlug}`)
     .then(response => response.json())
     .then(product => {
         // Carga el slider de imágenes

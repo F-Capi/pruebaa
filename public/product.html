@@ -14,32 +14,52 @@
 <body>
 
     <div id="wrapper" class="">
-        <nav>
-            <span class="material-icons" id="open-cart-btn">
-                shopping_bag
-            </span>
-        </nav>
-        <div class="product-container">
-            <div class="product-image-slider">
-                <div class="image-silder-top"></div>
-                <div class="image-silder-bottom"></div>
+
+        <head>
+            <div class="navbar-placeholder"></div>
+            <nav class="navbar">
+                <div class="container">
+                    <div class="brand-container">
+                        <a href="#" class="brand">Carezza Lingerie</a>
+                    </div>
+                    <div class="menu-container">
+                        <div class="menu">
+                            <a href="#" class="menu-item">Shop</a>
+                            <a href="#" class="menu-item">Contact</a>
+                            <a href="#" class="menu-item">About</a>
+                        </div>
+                        <div> <span class="material-icons" id="open-cart-btn">
+                                shopping_bag
+                            </span></div>
+                    </div>
+                </div>
+
+
+            </nav>
+        </head>
+
+        <main>
+            <div class="product-container">
+                <div class="product-image-slider">
+                    <div class="image-silder-top"></div>
+                    <div class="image-silder-bottom"></div>
+                </div>
+                <div class="product-details">
+                    <h1 id="product-name"></h1>
+                    <p id="product-description"></p>
+                    <p id="product-price"></p>
+
+                    <!-- Colores -->
+                    <div id="product-colors"></div>
+
+                    <!-- Tallas -->
+                    <div id="product-sizes"></div>
+
+                    <!-- Botón de agregar al carrito o pagar -->
+                    <button id="add-to-cart">Agregar al carrito</button>
+                </div>
+
             </div>
-            <div class="product-details">
-                <h1 id="product-name"></h1>
-                <p id="product-description"></p>
-                <p id="product-price"></p>
-
-                <!-- Colores -->
-                <div id="product-colors"></div>
-
-                <!-- Tallas -->
-                <div id="product-sizes"></div>
-
-                <!-- Botón de agregar al carrito o pagar -->
-                <button id="add-to-cart">Agregar al carrito</button>
-            </div>
-
-        </div>
     </div>
     <div class="cart-container">
         <div class="cart-top">
@@ -142,6 +162,9 @@
             <div class="cart-proceed-container"></div>
         </div>
     </div>
+    </main>
+
+
     <script src="/js/product.js"></script>
     <script src="/js/cart.js"></script>
 </body>
