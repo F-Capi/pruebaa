@@ -1,9 +1,11 @@
 const Product = require('../models/product');
+const slugify = require('slugify');
 
 exports.createProduct = async (req, res) => {
 
     console.log("hello");
     try {
+        const slug = slugify("Camiseta Estampada", { lower: true });
         let body = {
             "name": "Camiseta Estampada",
             "colors": ["Rojo", "Azul"],
@@ -18,7 +20,8 @@ exports.createProduct = async (req, res) => {
                 { "color": "Azul", "size": "S", "quantity": 8 },
                 { "color": "Azul", "size": "M", "quantity": 6 },
                 { "color": "Azul", "size": "L", "quantity": 7 }
-            ]
+            ],
+            "slug": slug
         };
 
         const newProduct = new Product(body);
@@ -43,6 +46,18 @@ exports.getAllProducts = async (req, res) => {
 exports.getProductById = async (req, res) => {
     try {
         const product = await Product.findById(req.params.id);
+        if (product) {
+            res.json(product);
+        } else {
+            res.status(404).json({ message: "Producto no encontrado" });
+        }
+    } catch (error) {
+        res.status(500).json({ message: "Error al obtener producto" });
+    }
+};
+exports.getProductBySlug = async (req, res) => {
+    try {
+        const product = await Product.findOne({ slug: req.params.slug });
         if (product) {
             res.json(product);
         } else {
