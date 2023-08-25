@@ -1,7 +1,7 @@
 const Product = require('../models/product');
 const slugify = require('slugify');
 
-exports.createProduct = async (req, res) => {
+exports.createProduct = async(req, res) => {
 
     console.log("hello");
     try {
@@ -32,7 +32,7 @@ exports.createProduct = async (req, res) => {
     }
 };
 
-exports.getAllProducts = async (req, res) => {
+exports.getAllProducts = async(req, res) => {
     try {
 
         const products = await Product.find();
@@ -43,7 +43,7 @@ exports.getAllProducts = async (req, res) => {
     }
 };
 
-exports.getProductById = async (req, res) => {
+exports.getProductById = async(req, res) => {
     try {
         const product = await Product.findById(req.params.id);
         if (product) {
@@ -55,7 +55,7 @@ exports.getProductById = async (req, res) => {
         res.status(500).json({ message: "Error al obtener producto" });
     }
 };
-exports.getProductBySlug = async (req, res) => {
+exports.getProductBySlug = async(req, res) => {
     try {
         const product = await Product.findOne({ slug: req.params.slug });
         if (product) {
@@ -67,3 +67,20 @@ exports.getProductBySlug = async (req, res) => {
         res.status(500).json({ message: "Error al obtener producto" });
     }
 };
+
+/*
+exports.productAvailable = async (req,res) => {
+    try{
+        
+    }catch (error){
+
+    }
+}
+
+exports.productsAvailable = async (req,res) => {
+    try{
+        
+    }catch (error){
+
+    }
+}*/
