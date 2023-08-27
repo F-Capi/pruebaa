@@ -133,9 +133,13 @@ body {
 .size-label {
     margin-right: 10px;
     padding: 5px 10px;
-    border: 1px solid #000;
     cursor: pointer;
 }
+
+.size-label-out{
+    text-decoration:line-through;
+    color: gray;
+} 
 
 .size-label:hover {
     background-color: #eee;
@@ -210,7 +214,10 @@ body {
 }
 
 .cart {
+    border-bottom: 1px solid  #c3c5c7;
     padding: 30px 30px;
+    max-height: 370px;
+    overflow-y: scroll;
 }
 
 .cart-item {
@@ -259,8 +266,11 @@ body {
     margin-bottom: 10px 0;
 }
 
-.red-circle {
-    background-color: red;
-    height: 16px;
-    width: 16px;
+.color-cart {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    border: 2px solid transparent;
 }
